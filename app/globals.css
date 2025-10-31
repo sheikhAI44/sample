@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0C0C0C;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-[color:var(--bg)] text-foreground font-body antialiased;
+}
+
+.container-page {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-medium transition-colors;
+}
+
+.btn-primary {
+  @apply text-white shadow-glow bg-red-gradient hover:opacity-90;
+}
+
+.btn-outline {
+  @apply text-foreground border border-white/20 hover:border-white/40 bg-white/5 backdrop-blur;
+}
+
+.badge {
+  @apply text-xs uppercase tracking-wide rounded-full px-3 py-1 bg-white/5 border border-white/10 text-white/80;
+}
+
+.glass {
+  @apply bg-white/[0.04] backdrop-blur-md border border-white/10;
+}
+
+.section-title {
+  @apply font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white;
+}
+
+.muted {
+  @apply text-white/70;
+}
+
+/* Animated gradient for CTA */
+@keyframes fireflow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* hide horizontal scrollbar for carousels */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
