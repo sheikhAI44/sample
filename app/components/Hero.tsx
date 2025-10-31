@@ -5,7 +5,7 @@ import Particles from './Particles';
 
 export default function Hero() {
   // Mouse-reactive gradient controlled via CSS vars
-  const onMove = (e: React.MouseEvent) => {
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - r.left;
     const y = e.clientY - r.top;
