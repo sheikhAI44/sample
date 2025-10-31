@@ -3,6 +3,8 @@ import { ArrowRight, Users } from 'lucide-react';
 import Section from './Section';
 import Particles from './Particles';
 
+const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export default function Hero() {
   // Mouse-reactive gradient controlled via CSS vars
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -18,7 +20,7 @@ export default function Hero() {
         className="absolute inset-0 -z-10 bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(12,12,12,0.6), rgba(12,12,12,0.92)), url('/fireguard/hero.jpeg')"
+            `linear-gradient(rgba(12,12,12,0.6), rgba(12,12,12,0.92)), url('${assetPrefix}/fireguard/hero.jpeg')`
         }}
       />
       {/* Reactive lighting */}

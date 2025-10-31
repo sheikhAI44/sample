@@ -1,5 +1,7 @@
 import Section from './Section';
 
+const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export default function CTA() {
   return (
     <Section id="cta" className="relative isolate">
@@ -7,7 +9,7 @@ export default function CTA() {
         className="absolute inset-0 -z-10 bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(12,12,12,0.75), rgba(12,12,12,0.9)), url('/fireguard/cta.jpeg')"
+            `linear-gradient(rgba(12,12,12,0.75), rgba(12,12,12,0.9)), url('${assetPrefix}/fireguard/cta.jpeg')`
         }}
       />
       {/* animated fire gradient overlay */}

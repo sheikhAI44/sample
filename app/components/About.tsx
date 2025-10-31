@@ -1,5 +1,7 @@
 import Section from './Section';
 
+const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export default function About() {
   return (
     <Section id="about" className="container-page py-20">
@@ -28,7 +30,7 @@ export default function About() {
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(12,12,12,0.2), rgba(12,12,12,0.5)), url('/fireguard/about.jpeg')"
+                `linear-gradient(rgba(12,12,12,0.2), rgba(12,12,12,0.5)), url('${assetPrefix}/fireguard/about.jpeg')`
             }}
           />
         </div>

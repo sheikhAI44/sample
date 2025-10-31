@@ -3,11 +3,13 @@ import Section from './Section';
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
 
+const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 const episodes = [
-  { title: 'FireGuard for Homeowners', image: '/fireguard/podcast1.jpeg' },
-  { title: 'Fire Safety for Building Managers', image: '/fireguard/podcast1.jpeg' },
-  { title: 'Insurance + Prevention: A Win-Win', image: '/fireguard/podcast1.jpeg' },
-  { title: 'Behind the Tech: AI + Panels', image: '/fireguard/podcast1.jpeg' }
+  { title: 'FireGuard for Homeowners', image: `${assetPrefix}/fireguard/podcast1.jpeg` },
+  { title: 'Fire Safety for Building Managers', image: `${assetPrefix}/fireguard/podcast1.jpeg` },
+  { title: 'Insurance + Prevention: A Win-Win', image: `${assetPrefix}/fireguard/podcast1.jpeg` },
+  { title: 'Behind the Tech: AI + Panels', image: `${assetPrefix}/fireguard/podcast1.jpeg` }
 ];
 
 export default function Podcast() {

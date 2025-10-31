@@ -4,11 +4,13 @@ import Section from './Section';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 // Use PNGs so you can drop in the provided files directly
+const assetPrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 const imgs = [
-  { src: '/gallery/installations/installation-1.png', alt: 'FireGuard installation 1' },
-  { src: '/gallery/installations/installation-2.png', alt: 'FireGuard installation 2' },
-  { src: '/gallery/installations/installation-3.png', alt: 'FireGuard installation 3' },
-  { src: '/gallery/installations/installation-4.png', alt: 'FireGuard installation 4' }
+  { src: `${assetPrefix}/gallery/installations/installation-1.png`, alt: 'FireGuard installation 1' },
+  { src: `${assetPrefix}/gallery/installations/installation-2.png`, alt: 'FireGuard installation 2' },
+  { src: `${assetPrefix}/gallery/installations/installation-3.png`, alt: 'FireGuard installation 3' },
+  { src: `${assetPrefix}/gallery/installations/installation-4.png`, alt: 'FireGuard installation 4' }
 ];
 
 export default function Installations() {
