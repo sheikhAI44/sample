@@ -12,7 +12,7 @@
     "type-check": "tsc --noEmit",
     "build:css": "tailwindcss -i ./app/globals.css -o ./app/tailwind.css",
     "export": "next export",
-    "build:docs": "npm run build && rm -rf docs && cp -R out docs",
+    "build:docs": "npm run build && rm -rf docs && cp -R out docs && touch docs/.nojekyll",
     "build:static": "npm run build"
   },
   "dependencies": {
