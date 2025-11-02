@@ -61,7 +61,10 @@ export default function AIChat() {
       }
 
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const model = genAI.getGenerativeModel({ 
+        model: 'gemini-1.5-flash',
+        systemInstruction: 'You are a helpful AI assistant for FireGuard, an AI-powered fire prevention system. Provide friendly, professional responses about their products, services, and features. Keep responses concise and relevant.'
+      });
 
       // Build conversation history (all messages except the one we just added)
       const historyMessages = messages.map(msg => ({
