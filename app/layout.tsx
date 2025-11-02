@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './tailwind.css';
 import Header from './components/Header';
+import AIChat from './components/AIChat';
 import { Inter, Poppins } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${poppins.variable}`}>
         <Header />
         {children}
+        <AIChat />
       </body>
     </html>
   );
