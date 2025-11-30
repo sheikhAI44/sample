@@ -3,56 +3,173 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0C0C0C;
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 10, 22, 40;
+  --accent-rgb: 6, 182, 212;
+  --navy-900: #0a1628;
+  --navy-800: #0f1f35;
+  --navy-700: #1a2d4a;
+  --navy-600: #1e3a5f;
+  --accent: #06b6d4;
+  --accent-light: #22d3ee;
 }
 
-html, body {
-  height: 100%;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-[color:var(--bg)] text-foreground font-body antialiased;
+  color: rgb(var(--foreground-rgb));
+  background: var(--navy-900);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
 }
 
-.container-page {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.btn {
-  @apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-medium transition-colors;
+::-webkit-scrollbar-track {
+  background: var(--navy-900);
 }
 
-.btn-primary {
-  @apply text-white shadow-glow bg-red-gradient hover:opacity-90;
+::-webkit-scrollbar-thumb {
+  background: var(--navy-600);
+  border-radius: 4px;
 }
 
-.btn-outline {
-  @apply text-foreground border border-white/20 hover:border-white/40 bg-white/5 backdrop-blur;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }
 
-.badge {
-  @apply text-xs uppercase tracking-wide rounded-full px-3 py-1 bg-white/5 border border-white/10 text-white/80;
+/* Section styling */
+section {
+  position: relative;
 }
 
+/* Glass effect utility */
 .glass {
-  @apply bg-white/[0.04] backdrop-blur-md border border-white/10;
+  background: rgba(30, 58, 95, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.section-title {
-  @apply font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white;
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #22d3ee 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.muted {
-  @apply text-white/70;
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
 }
 
-/* Animated gradient for CTA */
-@keyframes fireflow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.glow-accent-hover:hover {
+  box-shadow: 0 0 50px rgba(6, 182, 212, 0.5);
 }
 
-/* hide horizontal scrollbar for carousels */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* Button base styles */
+.btn-primary {
+  @apply px-8 py-4 bg-accent text-navy-900 font-semibold rounded-lg transition-all duration-300;
+  @apply hover:bg-accent-light hover:shadow-glow-lg hover:scale-105;
+}
+
+.btn-secondary {
+  @apply px-8 py-4 border border-accent/50 text-white font-semibold rounded-lg transition-all duration-300;
+  @apply hover:border-accent hover:bg-accent/10 hover:shadow-glow;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Background patterns */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.bg-radial-glow {
+  background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+}
