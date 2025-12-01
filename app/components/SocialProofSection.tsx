@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 import { TrendingUp, Users, DollarSign } from 'lucide-react';
 
@@ -59,6 +59,100 @@ function CountUp({ value, duration = 2 }: { value: number; duration?: number }) 
   return <span ref={ref}>{count}</span>;
 }
 
+function LiveRevenueSimulator() {
+  const [views, setViews] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  // Derived values
+  const clicks = Math.floor(views * 0.03);
+  const leads = Math.floor(clicks * 0.20);
+  const sales = Math.floor(leads * 0.05);
+  const revenue = sales * 97;
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, 100000, {
+        duration: 3,
+        ease: "easeOut",
+        onUpdate: (latest) => setViews(Math.floor(latest)),
+      });
+      return () => controls.stop();
+    }
+  }, [isInView]);
+
+  const formatNumber = (num: number) => {
+    return new Intl.NumberFormat('en-US').format(num);
+  };
+
+  return (
+    <div ref={ref} className="space-y-4 font-mono">
+      <div className="flex justify-between items-center py-3 border-b border-white/5">
+        <span className="text-gray-400 flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+          Monthly Views
+        </span>
+        <span className="text-white font-bold tabular-nums text-lg tracking-wide">
+          {formatNumber(views)}
+        </span>
+      </div>
+
+      <div className="flex justify-between items-center py-3 border-b border-white/5 relative overflow-hidden">
+        {/* Progress bar background */}
+        <motion.div 
+          className="absolute left-0 top-0 bottom-0 bg-accent/5 -z-10"
+          initial={{ width: "0%" }}
+          animate={{ width: `${(clicks / 3000) * 100}%` }}
+          transition={{ duration: 0.1 }}
+        />
+        <span className="text-gray-400 pl-2">Clicks (3%)</span>
+        <span className="text-accent font-medium tabular-nums">
+          {formatNumber(clicks)}
+        </span>
+      </div>
+
+      <div className="flex justify-between items-center py-3 border-b border-white/5 relative overflow-hidden">
+        <motion.div 
+          className="absolute left-0 top-0 bottom-0 bg-accent/5 -z-10"
+          initial={{ width: "0%" }}
+          animate={{ width: `${(leads / 600) * 100}%` }}
+          transition={{ duration: 0.1 }}
+        />
+        <span className="text-gray-400 pl-2">Leads (20%)</span>
+        <span className="text-accent font-medium tabular-nums">
+          {formatNumber(leads)}
+        </span>
+      </div>
+
+      <div className="flex justify-between items-center py-3 border-b border-white/5 relative overflow-hidden">
+        <motion.div 
+          className="absolute left-0 top-0 bottom-0 bg-accent/5 -z-10"
+          initial={{ width: "0%" }}
+          animate={{ width: `${(sales / 30) * 100}%` }}
+          transition={{ duration: 0.1 }}
+        />
+        <span className="text-gray-400 pl-2">Sales (5%)</span>
+        <span className="text-accent font-medium tabular-nums">
+          {formatNumber(sales)}
+        </span>
+      </div>
+
+      <div className="flex justify-between items-center py-4 mt-2">
+        <span className="text-white font-semibold">At $97/product</span>
+        <motion.span 
+          className="text-3xl font-bold gradient-text tabular-nums"
+          animate={{ 
+            scale: revenue === 2910 ? [1, 1.1, 1] : 1,
+            textShadow: revenue === 2910 ? "0 0 20px rgba(6,182,212,0.5)" : "none"
+          }}
+        >
+          ${formatNumber(revenue)}/mo
+        </motion.span>
+      </div>
+    </div>
+  );
+}
+
 export default function SocialProofSection() {
   return (
     <section className="relative py-24 lg:py-32 bg-navy-800 overflow-hidden">
@@ -84,7 +178,7 @@ export default function SocialProofSection() {
             <p className="text-lg text-gray-400 leading-relaxed">
               You have credibility, a clear niche, and a warm audience ready to buy. 
               Small conversion percentages generate significant revenue at scale. 
-              Here's what a well-built system can deliver:
+              Here&apos;s what a well-built system can deliver:
             </p>
           </div>
         </AnimatedSection>
@@ -128,48 +222,33 @@ export default function SocialProofSection() {
 
         {/* Revenue Example */}
         <AnimatedSection delay={0.4}>
-          <div className="glass rounded-2xl p-8 lg:p-10 max-w-4xl mx-auto">
+          <div className="glass rounded-2xl p-8 lg:p-10 max-w-4xl mx-auto border border-accent/10 shadow-glow">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               {/* Left - Calculation */}
               <div>
-                <h3 className="text-xl font-heading font-semibold text-white mb-4">
-                  Let's Do The Math
+                <h3 className="text-xl font-heading font-semibold text-white mb-6 flex items-center gap-2">
+                  <span className="w-1.5 h-6 bg-accent rounded-full" />
+                  Live Revenue Simulator
                 </h3>
                 
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-white/10">
-                    <span className="text-gray-400">Monthly Views</span>
-                    <span className="text-white font-medium">100,000</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-white/10">
-                    <span className="text-gray-400">Clicks (3%)</span>
-                    <span className="text-white font-medium">3,000</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-white/10">
-                    <span className="text-gray-400">Leads (20%)</span>
-                    <span className="text-white font-medium">600</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-white/10">
-                    <span className="text-gray-400">Sales (5%)</span>
-                    <span className="text-white font-medium">30</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-white font-semibold">At $97/product</span>
-                    <span className="text-2xl font-bold gradient-text">$2,910/mo</span>
-                  </div>
-                </div>
+                <LiveRevenueSimulator />
               </div>
               
               {/* Right - Message */}
               <div className="lg:pl-8 lg:border-l border-white/10">
                 <div className="text-center lg:text-left">
-                  <p className="text-lg text-gray-300 mb-4">
-                    These are conservative estimates. With a higher-ticket offer or 
-                    better optimization, results multiply.
+                  <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                    Watch how <span className="text-white font-medium">predictable math</span> turns views into income. 
+                    These are conservative estimates.
                   </p>
-                  <p className="text-accent font-medium">
-                    The only question is: what's your system leaving on the table?
-                  </p>
+                  <div className="bg-navy-900/50 rounded-xl p-6 border border-white/5">
+                    <p className="text-accent font-medium mb-2">
+                      The Real Question:
+                    </p>
+                    <p className="text-gray-400 text-sm italic">
+                      &quot;What is your current system leaving on the table right now?&quot;
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,4 +258,3 @@ export default function SocialProofSection() {
     </section>
   );
 }
-

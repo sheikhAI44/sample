@@ -44,7 +44,7 @@ export default function FooterCTA() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-6">
-              Let's Build Together
+              Let&apos;s Build Together
             </span>
           </AnimatedSection>
           
@@ -57,7 +57,7 @@ export default function FooterCTA() {
           
           <AnimatedSection delay={0.2}>
             <p className="text-lg sm:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Book a quick call — we'll map your offer, install your system, 
+              Book a quick call — we&apos;ll map your offer, install your system, 
               and launch within days, not months.
             </p>
           </AnimatedSection>
@@ -161,4 +161,5 @@ export default function FooterCTA() {
     </>
   );
 }
+
 

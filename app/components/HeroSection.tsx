@@ -87,7 +87,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg sm:text-xl text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              You create. We engineer the backend. Today, I'll show how your content 
+              You create. We engineer the backend. Today, I&apos;ll show how your content 
               can generate consistent, predictable income with a custom-built system 
               tailored to your brand—so you keep creating while we handle the tech, 
               funnels, analytics, and delivery.
@@ -243,4 +243,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
 

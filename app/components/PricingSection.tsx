@@ -56,9 +56,19 @@ export default function PricingSection() {
           
           <AnimatedSection delay={0.2}>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              We don't charge setup fees. We don't do retainers. 
-              We only win when you win. It's that simple.
+              We don&apos;t charge setup fees. We don&apos;t do retainers. 
+              We only win when you win. It&apos;s that simple.
             </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3}>
+            <div className="mt-8 w-full flex justify-center">
+              <div className="inline-block bg-blue-500/10 border border-blue-400/20 rounded-full px-6 py-2">
+                <p className="text-sm font-medium text-blue-200 text-center">
+                  Limited Offer: This performance-based pricing is guaranteed for the next 10 clients only.
+                </p>
+              </div>
+            </div>
           </AnimatedSection>
         </div>
 
@@ -117,7 +127,7 @@ export default function PricingSection() {
                   Ready to start your partnership?
                 </p>
                 <p className="text-gray-400 text-sm">
-                  Book a call and let's map your offer together.
+                  Book a call and let&apos;s map your offer together.
                 </p>
               </div>
               <a
@@ -134,4 +144,5 @@ export default function PricingSection() {
     </section>
   );
 }
+
 
