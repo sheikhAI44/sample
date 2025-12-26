@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './tailwind.css';
 import { Inter, Poppins } from 'next/font/google';
+import AIChat from './components/AIChat';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-poppins' });
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} bg-navy-900 text-foreground antialiased`}>
         {children}
+        <AIChat />
       </body>
     </html>
   );
