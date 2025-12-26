@@ -36,7 +36,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-navy-900/90 backdrop-blur-lg border-b border-white/5'
+            ? 'bg-navy-900/90 backdrop-blur-lg border-b border-violet/20'
             : 'bg-transparent'
         }`}
       >
@@ -44,10 +44,10 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accent-light flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-brand-gradient flex items-center justify-center neon-glow">
                 <span className="text-navy-900 font-bold text-lg font-heading">A</span>
               </div>
-              <span className="text-white font-heading font-semibold text-xl">
+              <span className="text-text-primary font-heading font-semibold text-xl">
                 Acceleryn
               </span>
             </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-gray-300 hover:text-accent transition-colors duration-200 font-medium"
+                  className="text-text-secondary hover:text-neon transition-colors duration-200 font-medium"
                 >
                   {link.label}
                 </a>
@@ -74,7 +74,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-white"
+              className="md:hidden p-2 text-text-primary"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,7 +112,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
-                    className="text-2xl text-white font-medium py-3 border-b border-white/10 hover:text-accent transition-colors"
+                    className="text-2xl text-text-primary font-medium py-3 border-b border-violet/20 hover:text-neon transition-colors"
                   >
                     {link.label}
                   </motion.a>
@@ -135,6 +135,7 @@ export default function Navbar() {
     </>
   );
 }
+
 
 
 

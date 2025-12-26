@@ -27,7 +27,7 @@ export default function FooterCTA() {
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
         
         {/* Decorative elements */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-violet/40 to-transparent" />
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -38,25 +38,25 @@ export default function FooterCTA() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-neon-glow rounded-full blur-3xl"
         />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-violet/10 border border-violet/30 text-violet text-sm font-medium mb-6">
               Let&apos;s Build Together
             </span>
           </AnimatedSection>
           
           <AnimatedSection delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-heading font-bold text-text-primary mb-6 leading-tight">
               Ready to Scale with{' '}
-              <span className="gradient-text">Acceleryn?</span>
+              <span className="brand-gradient-text">Acceleryn?</span>
             </h2>
           </AnimatedSection>
           
           <AnimatedSection delay={0.2}>
-            <p className="text-lg sm:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
               Book a quick call — we&apos;ll map your offer, install your system, 
               and launch within days, not months.
             </p>
@@ -87,15 +87,15 @@ export default function FooterCTA() {
           <AnimatedSection delay={0.4}>
             <div className="flex flex-wrap justify-center gap-6 mt-12 text-sm text-gray-500">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500" />
+                <div className="w-2 h-2 rounded-full bg-violet electric-glow" />
                 <span>15-Minute Audit</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500" />
+                <div className="w-2 h-2 rounded-full bg-neon neon-glow" />
                 <span>No Upfront Cost</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500" />
+                <div className="w-2 h-2 rounded-full bg-electric electric-glow" />
                 <span>Launch in Days</span>
               </div>
             </div>
@@ -110,10 +110,10 @@ export default function FooterCTA() {
             {/* Logo & Copyright */}
             <div className="text-center md:text-left">
               <a href="#" className="inline-flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accent-light flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-brand-gradient flex items-center justify-center neon-glow">
                   <span className="text-navy-900 font-bold text-lg font-heading">A</span>
                 </div>
-                <span className="text-white font-heading font-semibold text-xl">
+                <span className="text-text-primary font-heading font-semibold text-xl">
                   Acceleryn
                 </span>
               </a>
@@ -128,7 +128,7 @@ export default function FooterCTA() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-gray-400 hover:text-accent transition-colors text-sm"
+                  className="text-text-muted hover:text-neon transition-colors text-sm"
                 >
                   {link.label}
                 </a>
@@ -142,7 +142,7 @@ export default function FooterCTA() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-accent hover:bg-white/10 transition-all"
+                  className="w-10 h-10 rounded-lg bg-navy-800/50 flex items-center justify-center text-text-muted hover:text-electric hover:bg-electric/10 transition-all"
                 >
                   <social.icon size={18} />
                 </a>
@@ -150,7 +150,7 @@ export default function FooterCTA() {
               <a
                 href="mailto:hello@acceleryn.agency"
                 aria-label="Email"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-accent hover:bg-white/10 transition-all"
+                className="w-10 h-10 rounded-lg bg-navy-800/50 flex items-center justify-center text-text-muted hover:text-neon hover:bg-neon/10 transition-all"
               >
                 <Mail size={18} />
               </a>

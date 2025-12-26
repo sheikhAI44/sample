@@ -9,7 +9,7 @@ import FooterCTA from "./components/FooterCTA";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-navy-900 text-white overflow-x-hidden">
+    <main className="min-h-screen bg-navy-900 text-text-primary overflow-x-hidden">
       {/* Navigation */}
       <Navbar />
       
