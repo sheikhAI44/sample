@@ -6,14 +6,19 @@ import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#process', label: 'How It Works' },
+  { href: '#services', label: 'Benefits' },
+  { href: '#process', label: 'How to Join' },
   { href: '#pricing', label: 'Pricing' },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleJoinClick = () => {
+    window.open('[JOIN_LINK_PLACEHOLDER]', '_blank');
+    // TODO: Replace with actual join link
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,10 +50,10 @@ export default function Navbar() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-lg bg-brand-gradient flex items-center justify-center neon-glow">
-                <span className="text-navy-900 font-bold text-lg font-heading">A</span>
+                <span className="text-navy-900 font-bold text-lg font-heading">G</span>
               </div>
               <span className="text-text-primary font-heading font-semibold text-xl">
-                Acceleryn
+                GlowCush
               </span>
             </a>
 
@@ -63,12 +68,12 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#contact"
+              <button
+                onClick={handleJoinClick}
                 className="btn-primary text-sm py-3 px-6"
               >
-                Book a Call
-              </a>
+                Join Community
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -117,16 +122,18 @@ export default function Navbar() {
                     {link.label}
                   </motion.a>
                 ))}
-                <motion.a
-                  href="#contact"
-                  onClick={handleLinkClick}
+                <motion.button
+                  onClick={() => {
+                    handleLinkClick();
+                    handleJoinClick();
+                  }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: 0.3 }}
                   className="btn-primary text-center mt-4"
                 >
-                  Book a Call
-                </motion.a>
+                  Join Community
+                </motion.button>
               </div>
             </motion.div>
           </motion.div>
@@ -135,6 +142,8 @@ export default function Navbar() {
     </>
   );
 }
+
+
 
 
 

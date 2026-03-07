@@ -1,0 +1,32 @@
+# Robots.txt for Acceleryn Agency
+# Digital Product Marketing & Ebook Selling Services
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap location
+Sitemap: https://acceleryn.agency/sitemap.xml
+
+# Crawl delay for good measure
+Crawl-delay: 0
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /

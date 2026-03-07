@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { ChevronDown, ArrowRight, Play } from 'lucide-react';
+import { useCalendly } from './CalendlyContext';
 
 export default function HeroSection() {
+  const { openModal } = useCalendly();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy-900">
       {/* Background Elements */}
@@ -68,7 +71,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-accent text-sm font-medium">For Creators Ready to Scale</span>
+              <span className="text-accent text-sm font-medium">Digital Product & Ebook Marketing Agency</span>
             </motion.div>
 
             <motion.h1
@@ -77,8 +80,8 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold leading-tight mb-6"
             >
-              Scale Your Creator Income with{' '}
-              <span className="gradient-text">Acceleryn</span>
+              Digital Product Marketing Agency for{' '}
+              <span className="gradient-text">Ebook Selling</span> & Creator Growth
             </motion.h1>
 
             <motion.p
@@ -87,10 +90,10 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg sm:text-xl text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              You create. We engineer the backend. Today, I&apos;ll show how your content 
-              can generate consistent, predictable income with a custom-built system 
-              tailored to your brand—so you keep creating while we handle the tech, 
-              funnels, analytics, and delivery.
+              Leading digital marketing agency specializing in selling digital products and ebooks.
+              We build high-converting marketing funnels, automated sales systems, and complete
+              digital product creation services—so you can focus on creating while we handle
+              the selling, marketing, and delivery of your ebooks and digital products.
             </motion.p>
 
             <motion.div
@@ -99,13 +102,13 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <a
-                href="#contact"
+              <button
+                onClick={openModal}
                 className="btn-primary inline-flex items-center justify-center gap-2 group"
               >
                 Book a Free Audit Call
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
               <a
                 href="#process"
                 className="btn-secondary inline-flex items-center justify-center gap-2 group"

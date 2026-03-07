@@ -7,23 +7,23 @@ const steps = [
   {
     number: '01',
     icon: ClipboardCheck,
-    title: 'Audit',
+    title: 'Marketing Audit',
     duration: '15 Minutes',
-    description: 'We review your niche, assets, and goals. Quick call to understand exactly where you are and where you want to go.',
+    description: 'We review your digital products, target audience, and sales goals. Quick discovery call to understand your ebook or digital product idea and market opportunity.',
   },
   {
     number: '02',
     icon: Map,
-    title: 'Blueprint',
-    duration: 'Custom Strategy',
-    description: 'We map your funnel, offer, and content plan clearly. A complete roadmap tailored to your brand and audience.',
+    title: 'Sales Strategy',
+    duration: 'Custom Plan',
+    description: 'We design your complete digital product sales funnel—landing pages, email sequences, and pricing strategy optimized for conversions and profitability.',
   },
   {
     number: '03',
     icon: Rocket,
-    title: 'Build & Launch',
+    title: 'Launch & Sell',
     duration: 'Days, Not Months',
-    description: 'We install the system. You keep creating. Your backend starts generating predictable income.',
+    description: 'We build your ebook marketing system and launch. Start selling digital products with automated funnels that generate revenue 24/7.',
   },
 ];
 
@@ -43,20 +43,20 @@ export default function HowItWorksSection() {
         <div className="text-center mb-16">
           <AnimatedSection>
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-6">
-              Our Process
+              Digital Product Marketing Process
             </span>
           </AnimatedSection>
-          
+
           <AnimatedSection delay={0.1}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
-              How It <span className="gradient-text">Works</span>
+              How We Help You <span className="gradient-text">Sell Digital Products</span>
             </h2>
           </AnimatedSection>
-          
+
           <AnimatedSection delay={0.2}>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              From first call to revenue-generating system in days. 
-              Simple, fast, and built around your schedule.
+              From discovery call to a complete ebook selling system in days.
+              Simple, fast, and designed to sell your digital products profitably.
             </p>
           </AnimatedSection>
         </div>
@@ -113,24 +113,24 @@ export default function HowItWorksSection() {
         <AnimatedSection delay={0.5} className="mt-16">
           <div className="glass rounded-2xl p-8 lg:p-12 text-center max-w-3xl mx-auto border border-accent/20">
             <h3 className="text-2xl lg:text-3xl font-heading font-bold text-white mb-4">
-              The Result?
+              Start Selling Digital Products Profitably
             </h3>
             <p className="text-lg text-gray-300 mb-6">
-              You keep creating content you love. Your backend works 24/7 turning 
-              that audience into consistent, predictable revenue.
+              You create amazing ebooks and digital products. We build the marketing
+              systems that sell them 24/7—turning your knowledge into consistent revenue.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center gap-2 text-accent">
                 <div className="w-2 h-2 rounded-full bg-accent" />
-                <span>No tech headaches</span>
+                <span>High-converting funnels</span>
               </div>
               <div className="flex items-center gap-2 text-accent">
                 <div className="w-2 h-2 rounded-full bg-accent" />
-                <span>No funnel confusion</span>
+                <span>Automated ebook delivery</span>
               </div>
               <div className="flex items-center gap-2 text-accent">
                 <div className="w-2 h-2 rounded-full bg-accent" />
-                <span>Just results</span>
+                <span>Profitable results</span>
               </div>
             </div>
           </div>
@@ -139,6 +139,8 @@ export default function HowItWorksSection() {
     </section>
   );
 }
+
+
 
 
 

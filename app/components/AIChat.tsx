@@ -102,7 +102,8 @@ Unlike most agencies who charge $15,000 to $50,000 upfront for custom funnel bui
         parts: [{ text: userMessage }]
       });
 
-      // Get model name from env or use default
+      // Get model name from env or use defaul
+      // t
       // For Google AI Studio API keys - using Gemini 2.0 Flash
       const modelName = process.env.NEXT_PUBLIC_GEMINI_MODEL || 'gemini-2.0-flash-exp';
       

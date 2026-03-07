@@ -72,23 +72,23 @@ export default function AboutSection() {
           <div className="order-1 lg:order-2">
             <AnimatedSection delay={0.1}>
               <span className="inline-block px-4 py-1.5 rounded-full bg-electric/10 border border-electric/30 text-electric text-sm font-medium mb-6">
-                Who We Are
+                Digital Marketing Agency
               </span>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-text-primary leading-tight mb-6">
-                The Backend Infrastructure{' '}
-                <span className="brand-gradient-text">Creators Need</span>
+                Your Digital Product{' '}
+                <span className="brand-gradient-text">Marketing Partner</span>
               </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
               <p className="text-lg text-text-muted leading-relaxed mb-6">
-                Acceleryn Agency builds the backend systems creators need to generate 
-                consistent, predictable revenue. While you create content, we engineer 
-                the structure behind your brand—funnels, analytics, delivery, automation, 
-                and monetization.
+                Acceleryn Agency is a digital marketing agency specializing in selling ebooks
+                and digital products online. We build complete marketing systems—sales funnels,
+                landing pages, email automation, and delivery—so you can sell digital products
+                profitably without technical expertise.
               </p>
             </AnimatedSection>
 
@@ -96,9 +96,9 @@ export default function AboutSection() {
               <div className="glass rounded-xl p-6 border-l-4 border-violet">
                 <p className="text-text-primary font-medium text-lg mb-2">Our Mission</p>
                 <p className="text-text-muted">
-                  Turn engaged audiences into dependable income without creators needing 
-                  to learn tech, funnels, or complex systems. You focus on what you do best. 
-                  We handle everything else.
+                  Help content creators and entrepreneurs sell digital products and ebooks
+                  profitably through proven marketing systems. No technical skills required—we
+                  build everything you need to turn your knowledge into consistent revenue.
                 </p>
               </div>
             </AnimatedSection>
@@ -107,15 +107,15 @@ export default function AboutSection() {
               <div className="flex flex-wrap gap-4 mt-8">
                 <div className="flex items-center gap-2 text-text-secondary">
                   <div className="w-2 h-2 rounded-full bg-electric electric-glow" />
-                  <span>Zero Tech Learning Curve</span>
+                  <span>Digital Product Marketing</span>
                 </div>
                 <div className="flex items-center gap-2 text-text-secondary">
                   <div className="w-2 h-2 rounded-full bg-violet electric-glow" />
-                  <span>Fully Managed Systems</span>
+                  <span>Ebook Selling Systems</span>
                 </div>
                 <div className="flex items-center gap-2 text-text-secondary">
                   <div className="w-2 h-2 rounded-full bg-neon neon-glow" />
-                  <span>Predictable Revenue</span>
+                  <span>Sales Funnel Development</span>
                 </div>
               </div>
             </AnimatedSection>
@@ -125,6 +125,8 @@ export default function AboutSection() {
     </section>
   );
 }
+
+
 
 
 

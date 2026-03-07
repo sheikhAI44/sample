@@ -3,11 +3,13 @@
 import { AnimatedSection } from './AnimatedSection';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Mail, Twitter, Linkedin, Instagram } from 'lucide-react';
+import CalendlyModal from './CalendlyModal';
+import { useCalendly } from './CalendlyContext';
 
 const socialLinks = [
   { icon: Twitter, href: '#', label: 'Twitter' },
   { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/acceleryn.agency/', label: 'Instagram' },
 ];
 
 const footerLinks = [
@@ -18,8 +20,11 @@ const footerLinks = [
 ];
 
 export default function FooterCTA() {
+  const { isOpen, openModal, closeModal } = useCalendly();
+
   return (
     <>
+      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
       {/* CTA Section */}
       <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
         {/* Background with gradient */}
@@ -64,15 +69,13 @@ export default function FooterCTA() {
           
           <AnimatedSection delay={0.3}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://calendly.com"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={openModal}
                 className="btn-primary inline-flex items-center justify-center gap-2 group text-lg"
               >
                 Book a Free Audit Call
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
               <a
                 href="#process"
                 className="btn-secondary inline-flex items-center justify-center gap-2 group text-lg"
